@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Face Detection System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Event Face Detection & Recognition</h1>
+
+        <!-- Event Configuration Section -->
+        <div class="section">
+            <h2>Event Configuration</h2>
+            <div class="user-registration">
+                <input type="text" id="eventId" placeholder="Enter Event ID">
+                <button onclick="setEventId()">Set Event</button>
+                <button onclick="loadEventUsers()">Load Event Users</button>
+            </div>
+        </div>
+
+        <!-- User Registration Section -->
+        <div class="section">
+            <h2>Register Users</h2>
+            <div class="user-registration">
+                <input type="text" id="userName" placeholder="Enter user name">
+                <input type="file" id="userPhoto" accept="image/*">
+                <button onclick="registerUser()">Register User</button>
+            </div>
+            <div id="registeredUsers"></div>
+        </div>
+
+        <!-- Event Photo Processing Section -->
+        <div class="section">
+            <h2>Process Event Photos</h2>
+            <div class="photo-upload">
+                <input type="file" id="eventPhotos" multiple accept="image/*">
+                <button onclick="processEventPhotos()">Process Photos</button>
+            </div>
+            <div id="processingStatus"></div>
+        </div>
+
+        <!-- Results Section -->
+        <div class="section">
+            <h2>Detection Results</h2>
+            <div id="results"></div>
+            <button onclick="uploadToSocialApp()" style="margin-top: 20px; background: #28a745;">Upload to Social
+                App</button>
+        </div>
+
+        <!-- Unrecognized Faces Section -->
+        <div class="section">
+            <h2>Unrecognized Faces (For Organizer Review)</h2>
+            <div id="unrecognizedFaces"></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+    <script src="face-detection.js"></script>
+    <script src="api-integration.js"></script>
+</body>
+
+</html>
